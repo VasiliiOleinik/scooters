@@ -1,0 +1,51 @@
+// Here you can add other styles
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.c-app {
+    background: #FFFFFF;
+}
+.c-sidebar {
+    background: #F7F7F7;
+    box-shadow: none !important;
+}
+.c-sidebar .c-sidebar-brand,
+.c-sidebar .c-sidebar-minimizer {
+    background: transparent;
+}
+.c-sidebar .c-sidebar-nav-link.c-active, .c-sidebar .c-active.c-sidebar-nav-dropdown-toggle {
+    font-weight: bold;
+    color: #1D1D1F;
+    background-color: #efefef;
+}
+.c-sidebar .c-sidebar-nav-link, .c-sidebar .c-sidebar-nav-dropdown-toggle {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #1D1D1F;
+    & img {
+        margin-right: 20px;
+    }
+    &:hover {
+        color: #1D1D1F;
+        background-color: #efefef;
+    }
+}
+.c-header {
+    padding: .5rem .5rem;
+    border-bottom: 0px;
+    padding-left: 60px;
+    padding-right: 175px;
+    height: 120px;
+}
+.c-wrapper:not(.c-wrapper-fluid) .c-body {
+    padding-left: 60px;
+    padding-right: 175px;
+}
+.c-main > .container-fluid, .c-main > .container-sm, .c-main > .container-md, .c-main > .container-lg, .c-main > .container-xl, .c-main > .container-xxl {
+    padding: 0px;
+}
