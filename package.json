@@ -1,5 +1,5 @@
 {
-  "name": "Oleinik dev",
+  "name": "OleinikDev",
   "version": "0.0.1-alfa",
   "description": "Scooters admin with CoreUI React Open Source Bootstrap 4 Admin Template",
   "author": {
@@ -32,6 +32,7 @@
     "@coreui/utils": "^1.3.1",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.0",
     "antd": "^4.15.5",
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "core-js": "^3.9.1",
     "enzyme": "^3.11.0",

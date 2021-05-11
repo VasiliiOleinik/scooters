@@ -11,7 +11,6 @@ import {
   TheHeaderDropdownNotif,
 } from './index'
 
-
 const TheHeader = () => {
   const dispatch = useDispatch()
   const sidebarShow = useSelector(state => state.sidebarShow)

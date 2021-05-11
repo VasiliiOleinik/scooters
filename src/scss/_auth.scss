@@ -1,0 +1,85 @@
+.login-page {
+    & .card-group > .card {
+        border: none;
+    }
+}
+.login-logo, .register-logo {
+    font-size: 2.1rem;
+    font-weight: 300;
+    margin-bottom: .9rem;
+    text-align: center;
+}
+.login-page h1, .register-page h1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 51px;
+    text-align: center;
+    letter-spacing: -1.5px;
+    color: #1D1D1F;
+}
+.login-box, .register-box {
+    max-width: 648px;
+    width: 100%;
+}
+.login-box form, .register-box form {
+    max-width: 424px;
+    width: 100%;
+    margin: 0 auto;
+}
+form.login-box .card {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 24px rgb(0 0 0 / 10%);
+    border-radius: 20px;
+    padding: 10px 24px;
+    border: none;
+}
+.control-label {
+    flex: initial;
+    width: 100%;
+    max-width: 100%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: left;
+    color: #D12421 !important;
+    margin-bottom: 0px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: inset 0 0 0 transparent;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.invalid-feedback {
+    display: block;
+    font-size: 12px;
+    color: red;
+}
+.has-error .form-control, .has-success .form-control {
+    box-shadow: none !important;
+}
+.form-control {
+    border: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1D1D1F;
+    background: #fff !important;
+}
+.auth-devider {
+    width: 100%;
+    border-bottom: 1px solid #E3E4E4;
+}

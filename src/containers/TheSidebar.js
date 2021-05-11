@@ -16,7 +16,8 @@ import CImg from '@coreui/icons-react'
 import Logo from '../assets/img/logo.png';
 
 // sidebar nav config
-import navigation from './_nav'
+import _nav from './_nav';
+console.log('_nav', _nav);
 
 const TheSidebar = () => {
   const dispatch = useDispatch()
@@ -37,7 +38,7 @@ const TheSidebar = () => {
       <CSidebarNav>
 
         <CCreateElement
-          items={navigation}
+          items={_nav}
           components={{
             CSidebarNavDivider,
             CSidebarNavDropdown,
