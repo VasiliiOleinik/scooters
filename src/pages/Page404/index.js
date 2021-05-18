@@ -4,14 +4,9 @@ import {
   CButton,
   CCol,
   CContainer,
-  CInput,
   CInputGroup,
-  CInputGroupPrepend,
-  CInputGroupAppend,
-  CInputGroupText,
   CRow
-} from '@coreui/react'
-import CIcon from '@coreui/icons-react'
+} from '@coreui/react';
 
 const Page404 = () => {
   return (
