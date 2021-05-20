@@ -104,3 +104,91 @@ body {
     opacity: .65;
     box-shadow: none;
 }
+.custom-table-wrap {
+    .table tr:first-child {
+        & th {
+            border-top: none;
+        }
+    }
+    &.text-nowrap {
+        & .table {
+            white-space: nowrap!important;
+        }
+    }
+    &.table-responsive {
+        & .react-bootstrap-table {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            flex: 1 1 auto;
+            min-height: 1px;
+            padding: 0!important;
+        }
+    }
+    & .table {
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: auto;
+        & thead th {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            letter-spacing: 0.2px;
+            color: #D12421;
+        }
+        & td {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            letter-spacing: 0.2px;
+            color: #1D1D1F;
+            vertical-align: middle !important;
+            border-top: 1px solid #BECDE0;
+        }
+    }
+}
+.react-bootstrap-table-pagination-total {
+    background: transparent;
+    border: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    color: #1D1D1F;
+    padding: 0px;
+    & span {
+        color: #d1243e;
+    }
+}
+.react-bootstrap-table-page-btns-ul {
+    & > li {
+        margin: 5px;
+        &:hover,
+        &.active {
+            & a.page-link{
+                color: #D12421 !important;
+                background-color:  transparent;
+                border-color:  transparent;
+            }
+        }
+    }
+    & .page-link {
+        background: transparent;
+        border: none;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: right;
+        letter-spacing: 0.3px;
+        color: #1D1D1F;
+        padding: 0px;
+    }
+}
+.react-bootstrap-table-pagination {
+    margin-top: 40px;
+}
