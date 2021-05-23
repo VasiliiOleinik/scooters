@@ -7,6 +7,7 @@ console.log('history', history);
 
 const TheTitles = () => {
     const title = routes.filter(route => route.path === history.location.pathname);
+    console.log('title',title );
     return (
         <>
             <Helmet>

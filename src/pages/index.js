@@ -10,6 +10,7 @@ import Promocode from './Promocode';
 import Security from './Security';
 import Settings from './Settings';
 import Trips from './Trips';
+import TripsView from './TripsView';
 import Users from './Users';
 
 export {
@@ -25,5 +26,6 @@ export {
   Security,
   Settings,
   Trips,
+  TripsView,
   Users
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik } from 'formik';
 
 // import * as Yup from 'yup';
@@ -8,6 +8,8 @@ import {
     Button,
     Input
 } from 'reactstrap';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 
@@ -16,15 +18,10 @@ import { FormInput } from 'src/components';
 
 const statusOptions = [
     { value: "-- Все --", label: '-- Все --', isDisabled: true },
-    { value: 'BR', label: 'BR' },
-    { value: 'NL', label: 'NL' },
-    { value: 'DE', label: 'DE' }
+    { value: 'in_process', label: 'В процессе' },
+    { value: 'finished', label: 'Завершена' },
+    { value: 'error', label: 'Не завершена' }
 ];
-const roleOptions = [
-    { value: "-- Все --", label: '-- Все --', isDisabled: true },
-    { value: 'female', label: 'female' },
-    { value: 'male', label: 'male' },
-]
 
 const Filter = ({ isLoading, setFilteredData }) => {
 
@@ -32,16 +29,21 @@ const Filter = ({ isLoading, setFilteredData }) => {
         const arr = [values];
         setFilteredData(arr);
     };
+
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
+
     return (
         <>
             <div className="custom-grid-filter-3 mb-3">
                 <Formik
                     initialValues={{
                         id: '',
-                        surname: '',
-                        phone: '',
+                        clientId: '',
+                        scooterId: '',
                         status: '',
-                        role: ''
+                        datestart:  startDate,
+                        dateend:  endDate
                     }}
                     onSubmit={handleSubmit}
                 >
@@ -54,17 +56,18 @@ const Filter = ({ isLoading, setFilteredData }) => {
                         touched,
                         resetForm,
                         setFieldValue,
-                        setFieldTouched
+                        setFieldTouched,
+                        formProps 
                     }) => (
                         <Form onSubmit={handleSubmit} className="formFilter activeFormFilter">
                             <div className="filters-block custom-grid-filter d-flex">
                                 <div className="custom-grid-filter-content card d-flex flex-wrap pl-0 pr-0 pt-2 pb-2 mr-3">
                                     <div className="custom-grid-filter-item">
-                                        <Label for="searchusers-id" className="control-label">ID пользователя</Label>
+                                        <Label for="tripssearch-id" className="control-label">ID поездки</Label>
                                         <FormInput
-                                            id="searchusers-id"
+                                            id="tripssearch-id"
                                             fieldKey="id"
-                                            name="SearchUsers[id]"
+                                            name="TripsSearch[id]"
                                             handleBlur={handleBlur}
                                             handleChange={handleChange}
                                             values={values}
@@ -77,11 +80,11 @@ const Filter = ({ isLoading, setFilteredData }) => {
                                         />
                                     </div>
                                     <div className="custom-grid-filter-item">
-                                        <Label for="searchusers-surname" className="control-label">Фамилия</Label>
+                                        <Label for="tripssearch-clientid" className="control-label">ID клиента</Label>
                                         <FormInput
-                                            id="searchusers-surname"
+                                            id="tripssearch-clientid"
                                             fieldKey="surname"
-                                            name="SearchUsers[surname]"
+                                            name="TripsSearch[clientId]"
                                             handleBlur={handleBlur}
                                             handleChange={handleChange}
                                             values={values}
@@ -89,16 +92,16 @@ const Filter = ({ isLoading, setFilteredData }) => {
                                             touched={touched}
                                             isLoading={isLoading}
                                             type="text"
-                                            autoComplete="surname"
+                                            autoComplete="clientId"
                                             addRowClass="mb-2"
                                         />
                                     </div>
                                     <div className="custom-grid-filter-item">
-                                        <Label for="searchusers-phone" className="control-label">Телефон</Label>
+                                        <Label for="tripssearch-scooterid" className="control-label">ID самоката</Label>
                                         <FormInput
-                                            id="searchusers-phone"
+                                            id="tripssearch-scooterid"
                                             fieldKey="phone"
-                                            name="SearchUsers[phone]"
+                                            name="TripsSearch[scooterId]"
                                             handleBlur={handleBlur}
                                             handleChange={handleChange}
                                             values={values}
@@ -106,18 +109,18 @@ const Filter = ({ isLoading, setFilteredData }) => {
                                             touched={touched}
                                             isLoading={isLoading}
                                             type="text"
-                                            autoComplete="phone"
+                                            autoComplete="scooterId"
                                             addRowClass="mb-2"
                                             maskedInput={true}
                                             className="form-control"
                                         />
                                     </div>
                                     <div className="custom-grid-filter-item">
-                                        <Label for="searchusers-status" className="control-label">Статус</Label>
+                                        <Label for="tripssearch-status_trip" className="control-label">Статус</Label>
                                         <Input
                                             type="select"
-                                            name="SearchUsers[status]"
-                                            id="searchusers-status"
+                                            name="TripsSearch[status_trip]"
+                                            id="tripssearch-status_trip"
                                             fieldKey="status"
                                             autocomplete="status"
                                             handleBlur={handleBlur}
@@ -142,34 +145,50 @@ const Filter = ({ isLoading, setFilteredData }) => {
                                         </Input>
                                     </div>
                                     <div className="custom-grid-filter-item">
-                                        <Label for="searchusers-role" className="control-label">Роль</Label>
-                                        <Input
-                                            type="select"
-                                            name="SearchUsers[role]"
-                                            id="searchusers-role"
-                                            fieldKey="role"
-                                            autocomplete="role"
-                                            handleBlur={() => setFieldTouched('role', true)}
-                                            handleChange={handleChange}
+                                        <Label for="tripssearch-datestart" className="control-label">Период дата старта (Начало)</Label>
+                                        <DatePicker
+                                            name="TripsSearch[dateStart]"
+                                            autoComplete="datestart"
                                             values={values}
                                             errors={errors}
                                             touched={touched}
                                             isLoading={isLoading}
-                                            onChange={(value) => setFieldValue('role', value.target.options[value.target.selectedIndex].value)}
-                                            onBlur={() => setFieldTouched('role', true)}
-                                            value={values.role}
-                                        >
-                                            {
-                                                roleOptions.map(elem => {
-                                                    return (
-                                                        <option value={elem.value} key={elem.value}>{elem.label}</option>
-                                                    )
-
-
-                                                })
-                                            }
-                                        </Input>
-
+                                            handleBlur={handleBlur}
+                                            handleChange={handleChange}
+                                            selected={startDate}
+                                            onChange={date => setStartDate(date)}
+                                            // onChange={(date, dateString) => setFieldValue("datestart", date)}
+                                            selectsStart
+                                            startDate={startDate}
+                                            endDate={endDate}
+                                            dateFormat="dd.MM.yyyy"
+                                            className="form-control custom-date-picker"
+                                            id="tripssearch-datestart"
+                                            fieldKey="datestart"
+                                        />
+                                    </div>
+                                    <div className="custom-grid-filter-item">
+                                        <Label for="tripssearch-dateend" className="control-label">Период дата старта (Конец)</Label>
+                                        <DatePicker
+                                            name="TripsSearch[dateend]"
+                                            autoComplete="dateend"
+                                            values={values}
+                                            errors={errors}
+                                            touched={touched}
+                                            isLoading={isLoading}
+                                            handleBlur={handleBlur}
+                                            handleChange={handleChange}
+                                            selected={endDate}
+                                            onChange={date => setEndDate(date)}
+                                            selectsEnd
+                                            startDate={startDate}
+                                            endDate={endDate}
+                                            minDate={startDate}
+                                            dateFormat="dd.MM.yyyy"
+                                            className="form-control custom-date-picker"
+                                            id="tripssearch-dateend"
+                                            fieldKey="dateend"
+                                        />
                                     </div>
                                 </div>
 

@@ -22,20 +22,25 @@ const Settings = Loadable({
 const Trips = Loadable({
   loader: () => import('./pages/Trips'), loading: Loading
 });
+const TripsView = Loadable({
+  loader: () => import('./pages/TripsView'), loading: Loading
+});
 const Users = Loadable({
   loader: () => import('./pages/Users'), loading: Loading
 });
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
-  { path: '/dashboard', name: 'Dashboard', component: Dashboard, exact: true },
-  { path: '/transport', name: 'Transport', component: Transport, exact: true },
-  { path: '/clients', name: 'Clients', component: Clients, exact: true },
-  { path: '/promocode', name: 'Promocode', component: Promocode, exact: true },
-  { path: '/security', name: 'Security', component: Security, exact: true },
-  { path: '/settings', name: 'Settings', component: Settings, exact: true },
-  { path: '/trips', name: 'Trips', component: Trips, exact: true },
-  { path: '/users', name: 'Users', component: Users, exact: true },
+  { path: '/', name: 'Доска', component: Dashboard, exact: true },
+  { path: '/dashboard', name: 'Доска', component: Dashboard, exact: true },
+  { path: '/transport', name: 'Транспорт', component: Transport, exact: true },
+  { path: '/clients', name: 'Клиенты', component: Clients, exact: true },
+  { path: '/promocode', name: 'Промокоды', component: Promocode, exact: true },
+  { path: '/security', name: 'Безопасность', component: Security, exact: true },
+  { path: '/settings', name: 'Настройки', component: Settings, exact: true },
+  { path: '/trips', name: 'Поездки', component: Trips, exact: true },
+  { path: '/users', name: 'Пользователи', component: Users, exact: true },
+  { path: '/trips/view', name: 'Детали поездки', component: TripsView, exact: true },
 ];
 
 export default routes;

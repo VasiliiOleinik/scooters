@@ -19,7 +19,8 @@ const FormInput = ({
   addRowClass,
   addCollClass,
   inputIcon,
-  maxLetters
+  maxLetters,
+  mask
 }) => {
   const error = errors[fieldKey],
     touchedField = touched[fieldKey];
@@ -42,7 +43,7 @@ const FormInput = ({
       value: values[fieldKey],
       className: error && touchedField && 'is-invalid',
       style: capitalize ? { textTransform: 'capitalize' } : null,
-      autoComplete: autoComplete
+      autoComplete: autoComplete,
     };
 
     if (maskedInput) {
@@ -58,9 +59,10 @@ const FormInput = ({
           <MaskedInput
             mask={[
               '+',
-              '7',
+              /\d/,
+              /\d/,
               '(',
-              /[9]/,
+              /\d/,
               /\d/,
               /\d/,
               ')',
