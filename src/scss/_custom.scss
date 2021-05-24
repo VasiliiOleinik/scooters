@@ -168,3 +168,54 @@ body {
         margin-top: .75rem;
     }
 }
+
+.dashboard-infobar {
+    position: relative;
+    & img {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        max-width: 26px;
+    }
+    &-title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #1D1D1F;
+    }
+    &-info {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        color: #1D1D1F;
+    }
+}
+
+.custom-icon-bar {
+    margin-left: 5px;
+}
+.apexcharts-menu-icon,
+.apexcharts-zoomin-icon, .apexcharts-zoomout-icon {
+    transform: initial;
+}
+.apexcharts-menu-icon {
+    transform: scale(.9);
+}
+.apexcharts-toolbar {
+    max-width: initial;
+}
+.apexcharts-toolbar div {
+    margin-left: 9px;
+}
+.apexcharts-zoom-icon, .apexcharts-zoomin-icon, .apexcharts-zoomout-icon, .apexcharts-reset-icon, .apexcharts-pan-icon, .apexcharts-selection-icon, .apexcharts-menu-icon, .apexcharts-toolbar-custom-icon {
+    width: initial;
+}
+.apexcharts-zoomin-icon path:last-of-type, .apexcharts-zoomout-icon path:last-of-type {
+    fill: #D12421;
+}
+#chart,
+#chart-bar {
+    max-width: 1350px;
+}

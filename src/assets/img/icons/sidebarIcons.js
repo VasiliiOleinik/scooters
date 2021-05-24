@@ -6,6 +6,10 @@ import twoPersons from './2-Persons.svg';
 import clients from './Clients.svg';
 import persent from './Persent.svg';
 import settings from './Settings.svg';
+import refresh from './refresh.svg';
+import downloadChart from './download-chart.svg';
+import barChart from './bar-chart.svg';
+import lineChart from './line-chart.svg';
 
 const sidebarIcons = {
     graph,
@@ -16,6 +20,10 @@ const sidebarIcons = {
     clients,
     persent,
     settings,
+    refresh,
+    downloadChart,
+    barChart,
+    lineChart
 };
 
 export default sidebarIcons;

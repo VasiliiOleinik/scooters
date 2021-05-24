@@ -5,7 +5,6 @@ export const isUserLogged = () => {
   if (token) {
     return true;
   }
-
   return false;
 };
 

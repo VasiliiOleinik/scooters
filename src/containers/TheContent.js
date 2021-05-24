@@ -23,6 +23,7 @@ const TheContent = () => {
       <CContainer fluid>
         <Suspense fallback={loading}>
           <Switch>
+            {/* Поменять условие на !isUserLogged - если юзер не залогинен */}
             {isUserLogged() && <Redirect to="/login" />}
             {routes.map((route, idx) => {
               return route.component && (
