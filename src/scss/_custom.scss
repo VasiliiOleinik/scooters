@@ -193,28 +193,30 @@ body {
     }
 }
 
-.custom-icon-bar {
-    margin-left: 5px;
+
+#chart  {
+    .apexcharts-menu-icon,
+    .apexcharts-zoomin-icon, .apexcharts-zoomout-icon {
+        transform: initial;
+    }
+    .apexcharts-toolbar {
+        max-width: initial;
+    }
+    .apexcharts-toolbar div {
+        margin-left: 9px;
+    }
+    .apexcharts-zoom-icon, .apexcharts-zoomin-icon, .apexcharts-zoomout-icon, .apexcharts-reset-icon, .apexcharts-pan-icon, .apexcharts-selection-icon, .apexcharts-menu-icon, .apexcharts-toolbar-custom-icon {
+        width: initial;
+    }
+    .apexcharts-zoomin-icon path:last-of-type, .apexcharts-zoomout-icon path:last-of-type {
+        fill: #D12421;
+    }
+    .custom-icon-bar {
+        margin-left: 5px;
+    }
 }
-.apexcharts-menu-icon,
-.apexcharts-zoomin-icon, .apexcharts-zoomout-icon {
-    transform: initial;
-}
-.apexcharts-menu-icon {
-    transform: scale(.9);
-}
-.apexcharts-toolbar {
-    max-width: initial;
-}
-.apexcharts-toolbar div {
-    margin-left: 9px;
-}
-.apexcharts-zoom-icon, .apexcharts-zoomin-icon, .apexcharts-zoomout-icon, .apexcharts-reset-icon, .apexcharts-pan-icon, .apexcharts-selection-icon, .apexcharts-menu-icon, .apexcharts-toolbar-custom-icon {
-    width: initial;
-}
-.apexcharts-zoomin-icon path:last-of-type, .apexcharts-zoomout-icon path:last-of-type {
-    fill: #D12421;
-}
+
+
 #chart,
 #chart-bar {
     max-width: 1350px;
