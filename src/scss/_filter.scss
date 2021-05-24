@@ -131,3 +131,17 @@
         background: #D12421;
     }
 }
+
+.custom-grid-filter-2 {
+    .custom-grid-filter-content {
+        max-width: 430px;
+        width: 100%;
+        flex-direction: initial;
+    }
+    .custom-grid-filter-item {
+        width: 50%;
+        &:nth-of-type(odd) {
+            border-right: 1px solid #BECDE0;
+        }
+    }
+}
