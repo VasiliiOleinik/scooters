@@ -72,8 +72,11 @@ body {
     text-align: center;
     height: 48px;
     color: #FFFFFF;
+    &:hover {
+        background-color: #c82333;
+    }
 }
-.btns-wrap .btn {
+.c-footer .btns-wrap .btn {
     width: 150px;
     height: 40px;
     font-weight: 600;
@@ -104,93 +107,64 @@ body {
     opacity: .65;
     box-shadow: none;
 }
-.custom-table-wrap {
-    .table tr:first-child {
-        & th {
-            border-top: none;
-        }
-    }
-    &.text-nowrap {
-        & .table {
-            white-space: nowrap!important;
-        }
-    }
-    &.custom-table-responsive {
-        & .react-bootstrap-table {
-            display: block;
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            flex: 1 1 auto;
-            min-height: 1px;
-            padding: 0!important;
-        }
-    }
-    & .table {
-        border-collapse: collapse;
-        width: 100%;
-        table-layout: auto;
-        & thead th {
-            font-style: normal;
-            font-weight: 600;
-            font-size: 14px;
-            line-height: 17px;
-            letter-spacing: 0.2px;
-            color: #D12421;
-            white-space: initial;
-        }
-        & td {
-            font-style: normal;
-            font-weight: 600;
-            font-size: 14px;
-            line-height: 17px;
-            letter-spacing: 0.2px;
-            color: #1D1D1F;
-            vertical-align: middle !important;
-            border-top: 1px solid #BECDE0;
-        }
-    }
-}
-.react-bootstrap-table-pagination-total {
-    background: transparent;
-    border: none;
+
+.security-grid-side h2 {
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    letter-spacing: 0.3px;
     color: #1D1D1F;
-    padding: 0px;
+    position: relative;
+    cursor: pointer;
+    padding: 0px 15px;
+    margin: 0px;
+    &::after {
+        content: url(../assets/img/icons/arrow-down.svg);
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all .2s ease-in;
+    }
     & span {
-        color: #d1243e;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        color: #1D1D1F;
+        margin-top: 10px;
+        display: inline-block;
     }
 }
-.react-bootstrap-table-page-btns-ul {
-    justify-content: flex-end;
-    & > li {
-        margin: 5px;
-        &:hover,
-        &.active {
-            & a.page-link{
-                color: #D12421 !important;
-                background-color:  transparent;
-                border-color:  transparent;
-            }
+.security-grid-main {
+    max-width: 928px;
+    width: 100%;
+}
+.security-grid-table {
+    .security-grid-cell {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: #000000;
+        padding: 0px 5px;
+        &:first-of-type {
+            width: 70px;
         }
     }
-    & .page-link {
-        background: transparent;
-        border: none;
+    .simple-link {
         font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 20px;
-        text-align: right;
-        letter-spacing: 0.3px;
-        color: #1D1D1F;
-        padding: 0px;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: #000000;
+        transition: all .2s ease-in;
+        &:hover {
+            color: #D12421;
+            text-decoration: none;
+        }
     }
-}
-.react-bootstrap-table-pagination {
-    margin-top: 40px;
+    .security-grid-row:first-of-type {
+        margin-top: .75rem;
+    }
 }
