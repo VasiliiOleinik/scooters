@@ -4,7 +4,11 @@ import {
   CHeader,
   CToggler,
   CHeaderNav,
+  CBreadcrumbRouter
 } from '@coreui/react';
+
+
+import routes from 'src/routes';
 
 import {
   TheHeaderDropdown,
@@ -23,7 +27,7 @@ const TheHeader = () => {
   }
 
   return (
-    <CHeader withSubheader fixed={false}>
+    <CHeader withSubheader fixed={false} className="flex-wrap">
       <CToggler
         inHeader
         className="ml-md-3 d-lg-none"
@@ -38,9 +42,9 @@ const TheHeader = () => {
         <TheHeaderDropdownNotif />
         <TheHeaderDropdown />
       </CHeaderNav>
-
-
+      <CBreadcrumbRouter routes={routes} className="w-100"/>
     </CHeader>
+
   )
 }
 

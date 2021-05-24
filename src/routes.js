@@ -31,8 +31,8 @@ const Users = Loadable({
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
-  { path: '/', name: 'Доска', component: Dashboard, exact: true },
-  { path: '/dashboard', name: 'Доска', component: Dashboard, exact: true },
+  { path: '/', name: 'Главная', component: Dashboard, exact: true },
+  // { path: '/dashboard', name: 'Доска', component: Dashboard, exact: true },
   { path: '/transport', name: 'Транспорт', component: Transport, exact: true },
   { path: '/clients', name: 'Клиенты', component: Clients, exact: true },
   { path: '/promocode', name: 'Промокоды', component: Promocode, exact: true },

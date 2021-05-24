@@ -5,7 +5,7 @@ const _nav = [
   {
     _tag: 'CSidebarNavItem',
     name: 'Главная',
-    to: '/dashboard',
+    to: '/',
     icon: <CImg src={sidebarIcons.graph} fluid alt="Graph" />,
   },
   {
