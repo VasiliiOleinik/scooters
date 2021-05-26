@@ -39,8 +39,8 @@ const routes = [
   { path: '/security', name: 'Безопасность', component: Security, exact: true },
   { path: '/settings', name: 'Настройки', component: Settings, exact: true },
   { path: '/trips', name: 'Поездки', component: Trips, exact: true },
+  { path: '/trips/view/:id', name: 'Детали поездки', component: TripsView },
   { path: '/users', name: 'Пользователи', component: Users, exact: true },
-  { path: '/trips/view', name: 'Детали поездки', component: TripsView, exact: true },
 ];
 
 export default routes;

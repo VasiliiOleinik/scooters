@@ -10,6 +10,7 @@ import {
   Page500,
   ResetPassword,
   ChangePassword,
+  TripsView
 } from './pages';
 
 // Containers
@@ -34,7 +35,7 @@ const App = props => {
   }, []);
 
   return (
-    <Router  history={history}>
+    <Router history={history}>
         <Switch>
           <Route path="/login" name="Login Page" render={() => <Login />} />
           <Route path="/forgot-password" ame="Reset Password" render={() => <ResetPassword />} />

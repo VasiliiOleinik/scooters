@@ -26,7 +26,7 @@ const login = function(credentials, rememberMe = true) {
             const user = requestState.data;
 
             setAuthToken(user['token'], rememberMe);
-            history.push('/dashboard');
+            history.push('/');
             dispatch(profileAction.getProfileInfo());
           } else {
             dispatch(

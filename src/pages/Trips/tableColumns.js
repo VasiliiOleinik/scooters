@@ -1,6 +1,13 @@
 import React from "react";
-import { Switch, Route, Link, matchPath } from "react-router-dom";
+import Loadable from 'react-loadable';
+import Loading from 'src/components/Loading';
+import { Link, matchPath, Route } from "react-router-dom";
 import eye from 'src/assets/img/icons/eye.png';
+import history from 'src/utils/history';
+
+const TripsView = Loadable({
+  loader: () => import('src/pages/TripsView'), loading: Loading
+});
 
 const columns = [{
     dataField: 'location.street.number',
@@ -66,7 +73,14 @@ const columns = [{
     sort: false,
     formatter: (cell) => {
       if (cell.coordinates) {
-        return <Link to={`trips/view:${cell.street.number} `}>Детали</Link>
+        const match = matchPath(`/trips/view/${cell.postcode}`, {
+          path: "/trips/view/:id",
+          exact: true,
+          strict: false
+        });
+        console.log('match', match);
+        return <Link to={match.url} > Детали</Link>
+        // return <Link to={match.url} component={TripsView}> 12345 </
       }
     },
 
