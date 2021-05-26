@@ -17,9 +17,9 @@ const TheTitles = () => {
         <>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>{`${title.length !== 0 ? title[0].name : ''} ${pageIsView&& pageId }`}</title>
+                <title>{`${title.length !== 0 ? title[0].name : ''} ${pageIsView ? pageId : ''}`}</title>
             </Helmet>
-            <h1>{`${title.length !== 0 ? title[0].name : ''} ${pageIsView&& pageId }`}</h1>
+            <h1>{`${title.length !== 0 ? title[0].name : ''} ${pageIsView ? pageId : '' }`}</h1>
         </>
     )
 }

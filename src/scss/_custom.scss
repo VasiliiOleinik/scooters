@@ -236,3 +236,42 @@ body {
         }
     }
 }
+
+.h-40px {
+    height: 40px !important;
+}
+.w-100px {
+    width: 100px !important;
+}
+.btn.btn-default:hover {
+    background: #f7f7f7;
+}
+.inputs-separate .form-group {
+    border-bottom: 1px solid #E3E4E4;
+    margin-bottom: 9px;
+    &:last-of-type {
+        border-bottom: none;
+        margin-bottom: 0px;
+    }
+}
+
+.form-group.disabled {
+    a input {
+        transition: all .2s ease-in;
+    }
+    a:hover {
+        text-decoration: none;
+        & input {
+            color: #D12421;
+            cursor: pointer;
+        }
+    }
+}
+
+.profile-photo-card {
+    & img {
+        position: relative; 
+        align-self: center;
+        object-fit: cover;
+    }
+}
