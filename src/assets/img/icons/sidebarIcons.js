@@ -10,6 +10,8 @@ import refresh from './refresh.svg';
 import downloadChart from './download-chart.svg';
 import barChart from './bar-chart.svg';
 import lineChart from './line-chart.svg';
+import upload from './download.svg';
+import close from './close.svg';
 
 const sidebarIcons = {
     graph,
@@ -23,7 +25,9 @@ const sidebarIcons = {
     refresh,
     downloadChart,
     barChart,
-    lineChart
+    lineChart,
+    upload,
+    close
 };
 
 export default sidebarIcons;

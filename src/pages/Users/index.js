@@ -10,7 +10,7 @@ import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import columns from './tableColumns';
 import options from './tableOptions';
 
-import Filter from './Filter';
+import Filter from './components/Filter';
 
 const Users = () => {
   const [data, setData] = useState([]);

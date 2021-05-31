@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Formik } from 'formik';
 
 // import * as Yup from 'yup';
@@ -34,6 +35,7 @@ const Filter = ({ isLoading, setFilteredData }) => {
     };
     return (
         <>
+            <Link className="btn btn-block btn-danger mb-4 mr-0 d-flex align-items-center justify-content-center w-136px" to="users/create">Создать</Link>
             <div className="custom-grid-filter-3 mb-3">
                 <Formik
                     initialValues={{

@@ -28,6 +28,9 @@ const TripsView = Loadable({
 const Users = Loadable({
   loader: () => import('./pages/Users'), loading: Loading
 });
+const UsersCreate = Loadable({
+  loader: () => import('./pages/Users/components/UsersCreate'), loading: Loading
+});
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
@@ -41,6 +44,7 @@ const routes = [
   { path: '/trips', name: 'Поездки', component: Trips, exact: true },
   { path: '/trips/view/:id', name: 'Детали поездки', component: TripsView },
   { path: '/users', name: 'Пользователи', component: Users, exact: true },
+  { path: '/users/create', name: 'Создание пользователя', component: UsersCreate, exact: true },
 ];
 
 export default routes;
